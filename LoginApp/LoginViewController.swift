@@ -20,8 +20,22 @@ class LoginViewController: UIViewController {
         passwordTF.resignFirstResponder()
     }
 
+    override func prepare(for seque: UIStoryboardSegue, sender: Any?) {
+        guard seque.destination is WelcomeViewController else { return }
+        
+        
+    }
+    
+    @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
+        guard let loginVC = unwindSegue.destination as? LoginViewController else { return }
+        loginVC.userNameTF.text = nil
+        loginVC.passwordTF.text = nil
+    }
+    
+    
 
     @IBAction func loginButtonTapped() {
+        
         showAlertAction(title: "oopps", message: "try again")
     }
     @IBAction func forgotUsernameTapped() {
