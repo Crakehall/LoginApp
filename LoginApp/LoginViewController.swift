@@ -40,7 +40,6 @@ class LoginViewController: UIViewController {
             showAlertAction(title: "oopps", message: "incorrect login or password")
             passwordTF.text = nil
             return
-        showAlertAction(title: "oopps", message: "incorrect login or password")
     }
         
         performSegue(withIdentifier: "login", sender: self)
@@ -54,7 +53,7 @@ class LoginViewController: UIViewController {
         showAlertAction(title: "oopps", message: "your password is \(password)")
     }
     
-    // MARK: PRIVATE
+    // MARK: PRIVATE Methods and properties
     
     private func showAlertAction(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -69,5 +68,6 @@ class LoginViewController: UIViewController {
     
 
 }
+
 
 
